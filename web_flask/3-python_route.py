@@ -29,7 +29,7 @@ def c_text(text):
 def python(text='is cool'):
     """Print python followed by the value of the text variable"""
     txt = text.replace("_", " ")
-    return "python {}".format(txt)
+    return "Python {}".format(txt)
 
 
 if __name__ == '__main__':
