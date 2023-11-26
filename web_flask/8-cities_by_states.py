@@ -2,8 +2,7 @@
 """Starts a Flask web application.
 The application listens on 0.0.0.0, port 5000.
 Routes:
-    /states: HTML page with an Html page.
-    /states/<id>: HTML page displaying the given state with <id>.
+    /cities_by_states: displays an HTML page
 """
 from models import storage
 from flask import Flask
@@ -12,22 +11,12 @@ from flask import render_template
 app = Flask(__name__)
 
 
-@app.route("/states", strict_slashes=False)
-def states():
-    """Displaying an HTML page with a list of all States.
-    States are sorted by name.
+@app.route("/cities_by_states", strict_slashes=False)
+def cities_by_states():
+    """Displays an HTML page with a list of all states and related cities.
     """
     states = storage.all("State")
-    return render_template("9-states.html", state=states)
-
-
-@app.route("/states/<id>", strict_slashes=False)
-def states_id(id):
-    """Displays an HTML page with info about <id>, if it exists."""
-    for state in storage.all("State").values():
-        if state.id == id:
-            return render_template("9-states.html", state=state)
-    return render_template("9-states.html")
+    return render_template("8-cities_by_states.html", states=states)
 
 
 @app.teardown_appcontext
@@ -37,4 +26,4 @@ def teardown(exc):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0")
