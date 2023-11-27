@@ -61,6 +61,7 @@ section.filters button:hover {
     z-index: 1;
     max-height: 300px;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .popover li h2{
     padding: 0;
