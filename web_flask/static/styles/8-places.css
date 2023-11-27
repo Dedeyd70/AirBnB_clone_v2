@@ -33,6 +33,7 @@ article h2{
     font-size: 30px;
     margin-top: -1px;
     padding-left: 0%;
+    text-align: left;
 }
 .article_title{
     width: 100%;
